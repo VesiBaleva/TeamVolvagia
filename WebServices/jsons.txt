@@ -1,0 +1,93 @@
+--For register user
+http://localhost:56257/api/users/register
+Post
+{  "username": "DonchoMinkov",
+   "displayName": "Doncho Minkov",
+   "authCode":   "bfff2dd4f1b310eb0dbf593bd83f94dd8d34077e" }
+   
+
+--For login
+http://localhost:56257/api/users/login
+Post
+{  "username": "DonchoMinkov",
+   "authCode":   "bfff2dd4f1b310eb0dbf593bd83f94dd8d34077e" }
+
+   
+--For logout
+http://localhost:56257/api/users/logout
+sessionKey:1obHQkCJHSsxwswEOqQAelBAEDUtidVQRVCwftVcWRTTGDjlVW
+Put
+
+
+--For create teams
+http://localhost:56257/api/teams
+Post
+в хедъра sessionKey: sessionKey=1EfbJQdPsFXNhAJZvVrphdZdRtrtbhiSBesekMbkQuFZgouCLX
+{
+	"members1":"Anubis_Black
+				bankina
+				bmmarinov
+				BorisPenev
+				boyan.palagachev
+				d_iliev_d
+				Dimov
+				doni.todorova
+				ekaterina.mitseva
+				ellapt
+				evgenidb
+				fanni_p
+				FeRt1",
+	"members2":"boncho.vylkov
+				Borislav_Milanov
+				Teodor92
+				naturalna
+				spareva
+				AntoniaStoeva
+				ScorpS
+				xellscream
+				Petur_Petkov
+				Sevda
+				gugulete
+				Stefanpu
+				ivivanov",
+	"teamnames":"Drogon
+				Meraxes
+				Mushu
+				Ramoth
+				Glaedr
+				Onaga
+				Ridley
+				Synn
+				Ender Dragon
+				Chrysophylax
+				Grigori
+				Fafnir
+				Saphira"
+}
+
+--For create assignments
+http://localhost:56257/api/categories
+Post
+в хедъра sessionKey:
+{
+	"categoryName":"UI fitting into the UI model and following the Modern Design concepts",
+	"assignments":[
+		{"name":"Aligning to the grid","maxValue":3},
+		{"name":"General UI alignment","maxValue":2},
+		{"name":"Appropriate use of colors","maxValue":2},
+		{"name":"Content first, minimum chrome","maxValue":3},
+		{"name":"Optimize for screen space, including snapped mode","maxValue":2}
+	]
+}
+
+
+--For create results
+http://localhost:56257/api/teams/41/result
+Post
+в хедъра sessionKey:
+{assignmentsResult:[
+					{"name":"Aligning to the grid","value":2},
+					{"name":"General UI alignment","value":1},
+					{"name":"Optimize for screen space, including snapped mode","value":1}]
+}
+

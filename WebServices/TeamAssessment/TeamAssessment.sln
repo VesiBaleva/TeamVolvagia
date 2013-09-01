@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamAssessment.Models", "TeamAssessment.Models\TeamAssessment.Models.csproj", "{0137FE17-76FC-4413-8F3B-CC72BB379FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamAssessnment.Data", "TeamAssessnment.Data\TeamAssessnment.Data.csproj", "{8C0F8AB6-6640-4524-A593-368ECBB35513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamAssessnment.WebAPI", "TeamAssessnment.WebAPI\TeamAssessnment.WebAPI.csproj", "{862A50A7-4560-40E6-A7EA-06F995B5A16B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0137FE17-76FC-4413-8F3B-CC72BB379FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0137FE17-76FC-4413-8F3B-CC72BB379FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0137FE17-76FC-4413-8F3B-CC72BB379FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0137FE17-76FC-4413-8F3B-CC72BB379FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C0F8AB6-6640-4524-A593-368ECBB35513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0F8AB6-6640-4524-A593-368ECBB35513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0F8AB6-6640-4524-A593-368ECBB35513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0F8AB6-6640-4524-A593-368ECBB35513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{862A50A7-4560-40E6-A7EA-06F995B5A16B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862A50A7-4560-40E6-A7EA-06F995B5A16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{862A50A7-4560-40E6-A7EA-06F995B5A16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{862A50A7-4560-40E6-A7EA-06F995B5A16B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
