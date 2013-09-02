@@ -64,9 +64,12 @@ namespace TeamAssessnment.WebAPI.Controllers
 			            }
                      }
 
-                    var ret = Request.CreateResponse(HttpStatusCode.OK);
 
-                    // var ret = Request.CreateResponse(HttpStatusCode.Created);
+                    var createdTeamsModel = this.GetAll();
+
+                  //  var ret = Request.CreateResponse(HttpStatusCode.OK);
+
+                    var ret = Request.CreateResponse(HttpStatusCode.Created, createdTeamsModel);
                     return ret;
                 }
             });
