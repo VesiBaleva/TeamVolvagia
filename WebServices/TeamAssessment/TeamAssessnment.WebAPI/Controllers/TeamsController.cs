@@ -69,7 +69,7 @@ namespace TeamAssessnment.WebAPI.Controllers
 
                   //  var ret = Request.CreateResponse(HttpStatusCode.OK);
 
-                    var ret = Request.CreateResponse(HttpStatusCode.Created, createdTeamsModel);
+                    var ret = Request.CreateResponse(HttpStatusCode.Created,createdTeamsModel);
                     return ret;
                 }
             });
@@ -93,7 +93,7 @@ namespace TeamAssessnment.WebAPI.Controllers
                 var teamEntities = context.Teams;
                 var models =
                     (from teamEntity in teamEntities
-                     where teamEntity.User==user
+                     where teamEntity.User.Id==user.Id
                      select new TeamDetailsModel()
                      {
                          Id = teamEntity.Id,
