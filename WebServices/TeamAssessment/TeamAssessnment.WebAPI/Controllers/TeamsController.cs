@@ -93,6 +93,7 @@ namespace TeamAssessnment.WebAPI.Controllers
                 var teamEntities = context.Teams;
                 var models =
                     (from teamEntity in teamEntities
+                     where User==user
                      select new TeamDetailsModel()
                      {
                          Id = teamEntity.Id,
