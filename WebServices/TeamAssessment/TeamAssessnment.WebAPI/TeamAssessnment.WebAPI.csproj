@@ -172,6 +172,7 @@
     </Compile>
     <Compile Include="Models\AssignmentsModel.cs" />
     <Compile Include="Models\AssignmentsResults.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\CreateAssignmentsWithCategories.cs" />
     <Compile Include="Models\CreatedTeamsModel.cs" />
     <Compile Include="Models\CreateResultModel.cs" />
@@ -266,7 +267,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

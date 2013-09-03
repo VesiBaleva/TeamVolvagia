@@ -64,5 +64,41 @@ namespace TeamAssessnment.WebAPI.Controllers
             });
             return responseMessage;
         }
+
+        [HttpGet]
+        public IQueryable<CategoryModel> GetAll()
+        {
+            var responseMsg = this.PerformOperationAndHandleExceptions(() =>
+            {
+                var sessionKey = this.GetHeaderValue(Request.Headers, "sessionKey");
+                var context = new TeamAssessnmentContext();
+
+                var user = context.Users.FirstOrDefault(usr => usr.SessionKey == sessionKey);
+                if (user == null)
+                {
+                    throw new InvalidOperationException("Invalid username or password");
+                }
+
+                var categoryEntities = context.Categories;
+                var models =
+                    (from categoryEntity in categoryEntities
+                     where categoryEntity.User.Id == user.Id
+                     select new CategoryModel()
+                     {
+                         Id = categoryEntity.Id,
+                         Name = categoryEntity.Name,
+                         Assignments = (from assEntity in categoryEntity.Assignments
+                                    select new AssignmentsModel()
+                                    {
+                                        Name = assEntity.Name,
+                                        MaxValue = assEntity.MaxValue
+                                    })
+
+                     });
+                return models;
+            });
+
+            return responseMsg;
+        }
     }
 }
