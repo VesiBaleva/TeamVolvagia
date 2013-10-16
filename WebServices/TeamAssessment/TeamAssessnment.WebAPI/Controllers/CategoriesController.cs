@@ -30,8 +30,7 @@ namespace TeamAssessnment.WebAPI.Controllers
 
                     List<Assignment> assignmentsList = new List<Assignment>();
 
-                    if (!(model.Assignment == null))
-                    {
+                    
                         foreach (var assignmentItem in model.Assignment)
                         {
                             var newAssignment = new Assignment()
@@ -53,13 +52,15 @@ namespace TeamAssessnment.WebAPI.Controllers
 
                         dbContext.Categories.Add(categoryEntity);
                         dbContext.SaveChanges();
+
+                        var categoryModel = new CategoryModel()
+                        {
+                            Id = categoryEntity.Id,
+                            Name = categoryEntity.Name
+                        };
                         
-                    }
-
-                    var ret = Request.CreateResponse(HttpStatusCode.OK);
-
-                    // var ret = Request.CreateResponse(HttpStatusCode.Created);
-                    return ret;
+                        var response = this.Request.CreateResponse(HttpStatusCode.Created,categoryModel);
+                        return response;
                 }
             });
             return responseMessage;
