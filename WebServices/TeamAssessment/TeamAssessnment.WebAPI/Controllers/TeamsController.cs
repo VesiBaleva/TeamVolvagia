@@ -185,5 +185,50 @@ namespace TeamAssessnment.WebAPI.Controllers
             return responseMessage;
 
         }
+
+
+        [ActionName("result")]
+        public HttpResponseMessage PostResultOnAssignment(int teamId,int assignmentId, CreateOneResultModel model)
+        {
+            var responseMessage = this.PerformOperationAndHandleExceptions(() =>
+            {
+                var sessionKey = this.GetHeaderValue(Request.Headers, "sessionKey");
+                var dbContext = new TeamAssessnmentContext();
+                // dbContext.Configuration.ProxyCreationEnabled = false;
+
+                using (dbContext)
+                {
+                    var user = dbContext.Users.FirstOrDefault(usr => usr.SessionKey == sessionKey);
+                    if (user == null)
+                    {
+                        throw new ArgumentException("Users must be logged when create a new comment!");
+                    }
+
+                    var teamEntity = dbContext.Teams.FirstOrDefault(team => team.Id == teamId);
+
+                    
+                    var assignmentEntity = dbContext.Assignments.FirstOrDefault(ass => ass.Id == assignmentId );
+                    var newResult = new Result()
+                    {
+                        Team = teamEntity,
+                        Value = model.AssignmentResult,
+                        User = user,                         
+                        Assignment = assignmentEntity,
+                    };
+
+                    dbContext.Results.Add(newResult);
+                    dbContext.SaveChanges();
+
+
+
+
+                    var response =
+                          this.Request.CreateResponse(HttpStatusCode.OK);
+                    return response;
+                }
+            });
+            return responseMessage;
+
+        }
     }
 }

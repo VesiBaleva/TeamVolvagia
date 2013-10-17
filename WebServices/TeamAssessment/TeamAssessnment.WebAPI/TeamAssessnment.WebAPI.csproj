@@ -176,6 +176,7 @@
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\CreateAssignmentsWithCategories.cs" />
     <Compile Include="Models\CreatedTeamsModel.cs" />
+    <Compile Include="Models\CreateOneResultModel.cs" />
     <Compile Include="Models\CreateResultModel.cs" />
     <Compile Include="Models\CreateTeamsModel.cs" />
     <Compile Include="Models\LoggedUserModel.cs" />
