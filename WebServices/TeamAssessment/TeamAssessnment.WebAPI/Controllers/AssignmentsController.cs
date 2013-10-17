@@ -62,6 +62,7 @@ namespace TeamAssessnment.WebAPI.Controllers
                      where assignmentEntity.User.Id == user.Id && assignmentEntity.Category.Id == categoryId
                      select new AssignmentsModel()
                      {
+                         Id = assignmentEntity.Id,
                          Name = assignmentEntity.Name,
                          MaxValue = assignmentEntity.MaxValue
                      });

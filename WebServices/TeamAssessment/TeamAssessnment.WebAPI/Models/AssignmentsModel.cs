@@ -13,5 +13,7 @@ namespace TeamAssessnment.WebAPI.Models
         public string Name { get; set; }
         [DataMember(Name = "maxValue")]
         public double MaxValue { get; set; }
+        [DataMember(Name = "id")]
+        public int Id { get; set; }
     }
 }
