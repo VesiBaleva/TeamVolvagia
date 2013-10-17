@@ -230,5 +230,36 @@ namespace TeamAssessnment.WebAPI.Controllers
             return responseMessage;
 
         }
+
+        [HttpGet]
+        [ActionName("result")]
+        public IQueryable<TeamAssignmentsResult> GetAll(int teamId)
+        {
+            var responseMsg = this.PerformOperationAndHandleExceptions(() =>
+            {
+                var sessionKey = this.GetHeaderValue(Request.Headers, "sessionKey");
+                var context = new TeamAssessnmentContext();
+
+                var user = context.Users.FirstOrDefault(usr => usr.SessionKey == sessionKey);
+                if (user == null)
+                {
+                    throw new InvalidOperationException("Invalid username or password");
+                }
+
+                //var teamEntities = context.Teams.FirstOrDefault(team => team.Id == teamId);
+                var models =
+                    (from resultEntity in context.Results
+                     where resultEntity.Team.Id==teamId &&  resultEntity.User.Id == user.Id
+                     select new TeamAssignmentsResult()
+                     {
+                         Id = resultEntity.Id,
+                         AssignmentId = resultEntity.Assignment.Id,
+                         Value = resultEntity.Value
+                     });
+                return models;
+            });
+
+            return responseMsg;
+        }
     }
 }

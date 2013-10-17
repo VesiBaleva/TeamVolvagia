@@ -181,6 +181,7 @@
     <Compile Include="Models\CreateTeamsModel.cs" />
     <Compile Include="Models\LoggedUserModel.cs" />
     <Compile Include="Models\ResultsModel.cs" />
+    <Compile Include="Models\TeamAssignmentsResult.cs" />
     <Compile Include="Models\TeamDetailsModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
