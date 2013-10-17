@@ -10,6 +10,6 @@ namespace TeamAssessnment.WebAPI.Models
     public class CreateOneResultModel
     {
         [DataMember(Name = "assignmentResult")]
-        public int AssignmentResult { get; set; }
+        public double AssignmentResult { get; set; }
     }
 }
